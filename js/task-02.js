@@ -11,3 +11,11 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+
+ingredients.forEach(ingredient => {
+  const listElement = document.createElement('li');
+  listElement.textContent = ingredient;
+
+  const ingredientsList = document.querySelector('ul#ingredients');
+  ingredientsList.appendChild(listElement);
+});
