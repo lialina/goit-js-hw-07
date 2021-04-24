@@ -25,11 +25,17 @@ const images = [
   },
 ];
 
+const gallery = document.querySelector('ul#gallery');
 
 images.forEach(image => {
-    const gallery = document.querySelector('ul#gallery');
     gallery.insertAdjacentHTML('afterbegin',
         `<li class="gallery__image">
-        <img src=${image.url} alt=${image.alt} width=640>
+        <img src=${image.url} alt=${image.alt} width=240px>
         </li>`);
+
 });
+
+gallery.style.display = 'flex';
+gallery.style.flexDirection = 'row';
+gallery.style.alignItems = 'center';
+gallery.style.listStyle = 'none';
