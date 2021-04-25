@@ -12,8 +12,10 @@ const inputElement = document.querySelector('#validation-input');
 inputElement.addEventListener('blur', function () {
     if (inputElement.dataset.length == inputElement.value.length) {
         inputElement.classList.add("valid");
+        inputElement.classList.remove("invalid");
     } else {
         inputElement.classList.add("invalid");
+        inputElement.classList.remove("valid");
     }
 });
     
