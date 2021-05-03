@@ -7,8 +7,12 @@ const inputElement = document.querySelector('#name-input');
 const outputSpan = document.querySelector('#name-output');
 
 inputElement.addEventListener('input', function () {
-    outputSpan.textContent = inputElement.value;
-})
+    if (inputElement.value == '') {
+        outputSpan.textContent = 'незнакомец';
+    } else {
+        outputSpan.textContent = inputElement.value;
+    }
+});
 
 
 // 1) создать inputElement - найти доступ к элементу инпуту (id="name-input")
@@ -16,5 +20,6 @@ inputElement.addEventListener('input', function () {
 // 3) сделать на inputElement событие инпут и что нужно сделать:
 
 //      а нужно сделать вот что: 
-// 4) изменить текстовое значение outputSpan на то, что было введено в инпуте,
-// то есть на inputElement.value
+// 4) если инпут пустой, то равен 'незнакомец';
+// 5) если ввести что-то новое было введено в инпуте, то изменить текстовое 
+// значение outputSpan на то, что, было введено
