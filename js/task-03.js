@@ -28,14 +28,11 @@ const images = [
 const gallery = document.querySelector('ul#gallery');
 
 const elements = images.map(image => {
-  const galleryElement = document.createElement('li');
-  galleryElement.insertAdjacentHTML('beforeend',
-    `<img src=${image.url} alt=${image.alt} width=240px>`);
-  galleryElement.classList.add("gallery__image");
+  const galleryElement = `<li class="gallery__image"><img src=${image.url} alt=${image.alt} width=240px></li>`;
   return galleryElement;
-});
+}).join('');
 
-gallery.append(...elements);
+gallery.insertAdjacentHTML('beforeend', elements);
 
 gallery.style.display = 'flex';
 gallery.style.flexDirection = 'row';
